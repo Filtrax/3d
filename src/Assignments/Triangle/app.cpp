@@ -28,7 +28,15 @@ void SimpleShapeApplication::init()
     std::vector<GLfloat> vertices = {
         -0.5f, 0.0f, 0.0f,
         0.5f, 0.0f, 0.0f,
-        0.0f, 0.5f, 0.0f};
+        0.0f, 0.5f, 0.0f,
+    
+        -0.5f, 0.0f, 0.0f,
+        -0.5f, -0.5f, 0.0f,
+        0.5f, 0.0f, 0.0f,
+    
+        0.5f, -0.5f, 0.0f,
+        -0.5f, -0.5f, 0.0f,
+        0.5f, 0.0f, 0.0f };
 
     // Generating the buffer and loading the vertex data into it.
     GLuint v_buffer_handle;
@@ -68,6 +76,6 @@ void SimpleShapeApplication::frame()
 {
     // Binding the VAO will setup all the required vertex buffers.
     glBindVertexArray(vao_);
-    glDrawArrays(GL_TRIANGLES, 0, 3);
+    glDrawArrays(GL_TRIANGLES, 0, 9);
     glBindVertexArray(0);
 }
